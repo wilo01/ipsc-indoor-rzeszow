@@ -3,6 +3,10 @@
     "capacity": {
       "filled": 42,
       "total": 60
+    },
+    "practiscore": {
+      "registration_url": "https://practiscore.com/search/matches",
+      "results_url": "https://practiscore.com/search/matches"
     }
   },
   "nav": {
@@ -182,7 +186,8 @@
     "heading": { "pl": "Wyniki", "en": "Results" },
     "placeholder": { "pl": "Wyniki zostaną opublikowane po zakończeniu zawodów 22 marca 2026.", "en": "Results will be published after the competition on March 22, 2026." },
     "divisions_heading": { "pl": "Klasyfikacja w dywizjach", "en": "Division Classification" },
-    "divisions": ["Open", "Standard", "Production", "Classic", "Revolver"]
+    "divisions": ["Open", "Standard", "Production", "Classic", "Revolver"],
+    "cta": { "pl": "WYNIKI NA PRACTISCORE", "en": "VIEW RESULTS ON PRACTISCORE" }
   },
   "gallery": {
     "heading": { "pl": "Galeria", "en": "Gallery" },

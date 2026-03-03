@@ -72,7 +72,8 @@
           </div>
 
           <!-- CTA (desktop) -->
-          <a href="#" class="hidden md:inline-block bg-primary text-dark font-bold text-sm px-5 py-2.5 rounded-lg hover:bg-yellow-400 transition-colors cta-glow"
+          <a :href="$store.lang.data?.config?.practiscore?.registration_url || '#'" target="_blank" rel="noopener noreferrer"
+             class="hidden md:inline-block bg-primary text-dark font-bold text-sm px-5 py-2.5 rounded-lg hover:bg-yellow-400 transition-colors cta-glow"
              x-text="$store.lang.t('nav.register_cta')"></a>
 
           <!-- Hamburger (mobile) -->
@@ -100,7 +101,8 @@
           <a href="#faq" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.faq')"></a>
           <a href="#results" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.results')"></a>
           <a href="#gallery" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.gallery')"></a>
-          <a href="#" class="bg-primary text-dark font-bold text-center px-5 py-2.5 rounded-lg mt-2"
+          <a :href="$store.lang.data?.config?.practiscore?.registration_url || '#'" target="_blank" rel="noopener noreferrer"
+             class="bg-primary text-dark font-bold text-center px-5 py-2.5 rounded-lg mt-2"
              x-text="$store.lang.t('nav.register_cta')"></a>
         </div>
       </div>
@@ -172,7 +174,8 @@
 
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#" class="bg-primary text-dark font-bold text-lg px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow inline-flex items-center gap-2"
+        <a :href="$store.lang.data?.config?.practiscore?.registration_url || '#'" target="_blank" rel="noopener noreferrer"
+           class="bg-primary text-dark font-bold text-lg px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow inline-flex items-center gap-2"
            x-text="$store.lang.t('hero.cta_register')" x-cloak></a>
         <a href="#about" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:border-primary hover:text-primary transition-all inline-flex items-center gap-2">
           <span x-text="$store.lang.t('hero.cta_more')" x-cloak></span>
@@ -300,7 +303,8 @@
 
       <!-- CTA -->
       <div class="text-center">
-        <a href="#" class="inline-block bg-primary text-dark font-bold text-lg px-10 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow"
+        <a :href="$store.lang.data?.config?.practiscore?.registration_url || '#'" target="_blank" rel="noopener noreferrer"
+           class="inline-block bg-primary text-dark font-bold text-lg px-10 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow"
            x-text="$store.lang.t('registration.cta')" x-cloak></a>
       </div>
     </div>
@@ -481,6 +485,12 @@
             <template x-for="div in ($store.lang.data?.results?.divisions || [])" :key="div">
               <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/10 text-primary" x-text="div"></span>
             </template>
+          </div>
+
+          <div class="mt-8">
+            <a :href="$store.lang.data?.config?.practiscore?.results_url || '#'" target="_blank" rel="noopener noreferrer"
+               class="inline-block bg-primary text-dark font-bold text-lg px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow"
+               x-text="$store.lang.t('results.cta')" x-cloak></a>
           </div>
         </div>
       </div>
