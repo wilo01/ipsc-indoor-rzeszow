@@ -1,0 +1,205 @@
+{
+  "config": {
+    "capacity": {
+      "filled": 42,
+      "total": 60
+    }
+  },
+  "nav": {
+    "about": { "pl": "O zawodach", "en": "About" },
+    "registration": { "pl": "Rejestracja", "en": "Registration" },
+    "stages": { "pl": "Program", "en": "Schedule" },
+    "location": { "pl": "Dojazd", "en": "Location" },
+    "faq": { "pl": "FAQ", "en": "FAQ" },
+    "results": { "pl": "Wyniki", "en": "Results" },
+    "gallery": { "pl": "Galeria", "en": "Gallery" },
+    "register_cta": { "pl": "Zarejestruj się", "en": "Register" }
+  },
+  "hero": {
+    "badge": { "pl": "IPSC Level 1 Indoor", "en": "IPSC Level 1 Indoor" },
+    "title": { "pl": "INDOOR RZESZÓW", "en": "INDOOR RZESZÓW" },
+    "subtitle": { "pl": "Puchar Prezydenta Rzeszowa i Starostwa Rzeszowskiego", "en": "Mayor of Rzeszów & Rzeszów County Cup" },
+    "date": { "pl": "22 marca 2026", "en": "March 22, 2026" },
+    "venue": { "pl": "Strzelnica \"Dycha\", Rzeszów", "en": "Shooting Range \"Dycha\", Rzeszów, Poland" },
+    "cta_register": { "pl": "ZAREJESTRUJ SIĘ", "en": "REGISTER NOW" },
+    "cta_more": { "pl": "WIĘCEJ INFORMACJI", "en": "MORE INFO" },
+    "countdown": {
+      "days": { "pl": "DNI", "en": "DAYS" },
+      "hours": { "pl": "GODZIN", "en": "HOURS" },
+      "minutes": { "pl": "MINUT", "en": "MINUTES" },
+      "seconds": { "pl": "SEKUND", "en": "SECONDS" }
+    },
+    "expired": { "pl": "Zawody trwają!", "en": "Competition underway!" },
+    "completed": { "pl": "Zawody zakończone!", "en": "Competition completed!" }
+  },
+  "about": {
+    "heading": { "pl": "O zawodach", "en": "About the Competition" },
+    "description": {
+      "pl": "IPSC Level 1 Indoor to zawody strzeleckie w formule dynamicznej, rozgrywane na strzelnicy krytej. Uczestnicy rywalizują na torach strzeleckich (stage'ach), gdzie liczy się precyzja, szybkość i bezpieczeństwo. To doskonała okazja, by sprawdzić swoje umiejętności w kontrolowanych warunkach halowych.",
+      "en": "IPSC Level 1 Indoor is a dynamic shooting competition held at an indoor range. Participants compete on shooting stages where precision, speed, and safety all count. It's an excellent opportunity to test your skills in controlled indoor conditions."
+    },
+    "card1_title": { "pl": "Dla kogo?", "en": "Who is it for?" },
+    "card1_text": {
+      "pl": "Zawody skierowane są do posiadaczy pozwolenia na broń do celów sportowych. Mile widziani zarówno doświadczeni strzelcy, jak i osoby stawiające pierwsze kroki w IPSC.",
+      "en": "The competition is open to holders of a sports firearms license. Both experienced shooters and IPSC newcomers are welcome."
+    },
+    "card2_title": { "pl": "Jak się zapisać?", "en": "How to register?" },
+    "card2_text": {
+      "pl": "Rejestracja odbywa się wyłącznie przez platformę PractiScore. Kliknij przycisk \"Zarejestruj się\" i wypełnij formularz zgłoszeniowy. Liczba miejsc jest ograniczona!",
+      "en": "Registration is done exclusively via the PractiScore platform. Click the \"Register\" button and fill out the application form. Places are limited!"
+    },
+    "card3_title": { "pl": "Co zabrać?", "en": "What to bring?" },
+    "card3_text": {
+      "pl": "Broń krótka (pistolet), minimum 150 sztuk amunicji, ochronniki słuchu i wzroku, kabura, ładownice, oraz dokument tożsamości ze zdjęciem.",
+      "en": "Handgun (pistol), minimum 150 rounds of ammunition, hearing and eye protection, holster, magazine pouches, and a photo ID."
+    },
+    "patron_heading": { "pl": "Patronat honorowy", "en": "Honorary Patronage" },
+    "patron_city": { "pl": "Prezydent Miasta Rzeszowa", "en": "Mayor of Rzeszów" },
+    "patron_county": { "pl": "Starostwo Powiatowe w Rzeszowie", "en": "Rzeszów County Office" }
+  },
+  "registration": {
+    "heading": { "pl": "Rejestracja", "en": "Registration" },
+    "fee_label": { "pl": "Wpisowe", "en": "Entry Fee" },
+    "fee_value": { "pl": "80 PLN", "en": "80 PLN (~€18)" },
+    "deadline_label": { "pl": "Termin rejestracji", "en": "Registration Deadline" },
+    "deadline_value": { "pl": "15 marca 2026", "en": "March 15, 2026" },
+    "limit_label": { "pl": "Limit uczestników", "en": "Participant Limit" },
+    "limit_value": { "pl": "60 osób", "en": "60 participants" },
+    "docs_heading": { "pl": "Wymagane dokumenty", "en": "Required Documents" },
+    "docs": {
+      "pl": [
+        "Ważne pozwolenie na broń do celów sportowych",
+        "Aktualna licencja PZSSport lub opłata jednorazowa",
+        "Dokument tożsamości ze zdjęciem"
+      ],
+      "en": [
+        "Valid sports firearms license",
+        "Current PZSSport license or one-time fee",
+        "Photo ID document"
+      ]
+    },
+    "cta": { "pl": "ZAREJESTRUJ SIĘ PRZEZ PRACTISCORE", "en": "REGISTER VIA PRACTISCORE" },
+    "capacity_label": { "pl": "Zajęte miejsca", "en": "Spots taken" },
+    "deadline_note": {
+      "pl": "lub do wyczerpania miejsc",
+      "en": "or until all spots are filled"
+    }
+  },
+  "stages": {
+    "heading": { "pl": "Program dnia", "en": "Day Schedule" },
+    "schedule": [
+      { "time": "07:30", "pl": "Otwarcie biura zawodów", "en": "Registration desk opens" },
+      { "time": "08:00", "pl": "Odprawa strzelecka (obowiązkowa)", "en": "Safety briefing (mandatory)" },
+      { "time": "08:30", "pl": "Start zawodów", "en": "Competition start" },
+      { "time": "~14:00", "pl": "Zakończenie strzelań", "en": "End of shooting" },
+      { "time": "~14:30", "pl": "Ogłoszenie wyników i dekoracja", "en": "Results & award ceremony" }
+    ],
+    "stages_heading": { "pl": "Tory strzeleckie (Stage'e)", "en": "Shooting Stages" },
+    "stages_note": {
+      "pl": "Szczegółowy opis torów zostanie opublikowany przed zawodami.",
+      "en": "Detailed stage descriptions will be published before the competition."
+    },
+    "stages_list": [
+      {
+        "name": { "pl": "Stage 1 — Szybka zmiana", "en": "Stage 1 — Quick Change" },
+        "description": { "pl": "Szybkie przejście między pozycjami strzeleckimi z wymianą magazynka.", "en": "Fast transition between shooting positions with magazine change." },
+        "type": "Short"
+      },
+      {
+        "name": { "pl": "Stage 2 — Korytarz", "en": "Stage 2 — Corridor" },
+        "description": { "pl": "Dynamiczne poruszanie się w wąskim korytarzu z wieloma celami.", "en": "Dynamic movement through a narrow corridor with multiple targets." },
+        "type": "Medium"
+      },
+      {
+        "name": { "pl": "Stage 3 — Drzwi", "en": "Stage 3 — Doorway" },
+        "description": { "pl": "Strzelanie z wykorzystaniem osłon drzwiowych i zmiana pozycji.", "en": "Shooting using door cover positions and position changes." },
+        "type": "Short"
+      },
+      {
+        "name": { "pl": "Stage 4 — Barykada", "en": "Stage 4 — Barricade" },
+        "description": { "pl": "Strzelanie zza barykady z obu stron, cele na różnych dystansach.", "en": "Shooting from both sides of a barricade, targets at various distances." },
+        "type": "Medium"
+      },
+      {
+        "name": { "pl": "Stage 5 — Ściana", "en": "Stage 5 — Wall" },
+        "description": { "pl": "Złożony tor z wieloma pozycjami strzeleckimi i ruchem w przód.", "en": "Complex stage with multiple shooting positions and forward movement." },
+        "type": "Long"
+      }
+    ],
+    "type_short": { "pl": "Krótki tor", "en": "Short Course" },
+    "type_medium": { "pl": "Średni tor", "en": "Medium Course" },
+    "type_long": { "pl": "Długi tor", "en": "Long Course" }
+  },
+  "location": {
+    "heading": { "pl": "Dojazd i miejsce", "en": "Location & Directions" },
+    "address_label": { "pl": "Adres", "en": "Address" },
+    "address": { "pl": "Strzelnica \"Dycha\", Rzeszów", "en": "Shooting Range \"Dycha\", Rzeszów, Poland" },
+    "parking_label": { "pl": "Parking", "en": "Parking" },
+    "parking_text": { "pl": "Bezpłatny parking dostępny na terenie obiektu.", "en": "Free parking available on site." },
+    "transport_label": { "pl": "Dojazd", "en": "Getting there" },
+    "transport_text": { "pl": "Strzelnica jest dostępna samochodem. Zalecamy korzystanie z nawigacji GPS.", "en": "The range is accessible by car. We recommend using GPS navigation." },
+    "facilities_label": { "pl": "Na miejscu", "en": "Facilities" },
+    "facilities_text": { "pl": "Zaplecze sanitarne, miejsce do odpoczynku, podstawowy catering.", "en": "Restrooms, rest area, basic catering." }
+  },
+  "faq": {
+    "heading": { "pl": "Najczęściej zadawane pytania", "en": "Frequently Asked Questions" },
+    "items": [
+      {
+        "q": { "pl": "Czy mogę startować bez licencji PZSSport?", "en": "Can I participate without a PZSSport license?" },
+        "a": { "pl": "Tak, ale wymagana jest opłata jednorazowa na rzecz PZSSport. Szczegóły podamy w regulaminie zawodów.", "en": "Yes, but a one-time PZSSport fee is required. Details will be provided in the competition regulations." }
+      },
+      {
+        "q": { "pl": "Jakie dywizje są dostępne?", "en": "What divisions are available?" },
+        "a": { "pl": "Dostępne dywizje: Open, Standard, Production, Classic, Revolver. Klasyfikacja według aktualnych przepisów IPSC.", "en": "Available divisions: Open, Standard, Production, Classic, Revolver. Classification per current IPSC rules." }
+      },
+      {
+        "q": { "pl": "Ile amunicji potrzebuję?", "en": "How much ammunition do I need?" },
+        "a": { "pl": "Zalecamy minimum 150 sztuk amunicji. Dokładna liczba zależy od liczby torów i ich specyfiki.", "en": "We recommend a minimum of 150 rounds. The exact number depends on the stages and their specifics." }
+      },
+      {
+        "q": { "pl": "Jak wygląda odprawa strzelecka?", "en": "What is the safety briefing like?" },
+        "a": { "pl": "Odprawa jest obowiązkowa dla wszystkich uczestników. Omawiane są zasady bezpieczeństwa, regulamin zawodów i procedury na torach strzeleckich.", "en": "The briefing is mandatory for all participants. It covers safety rules, competition regulations, and stage procedures." }
+      },
+      {
+        "q": { "pl": "Czy zawody mogą zostać odwołane z powodu pogody?", "en": "Can the competition be cancelled due to weather?" },
+        "a": { "pl": "Nie! Zawody odbywają się na strzelnicy krytej (Indoor), więc pogoda nie ma wpływu na ich przebieg.", "en": "No! The competition takes place at an indoor range, so weather has no effect on the event." }
+      },
+      {
+        "q": { "pl": "Jak sprawdzić wyniki po zawodach?", "en": "How to check results after the competition?" },
+        "a": { "pl": "Wyniki będą dostępne na platformie PractiScore oraz w sekcji \"Wyniki\" na tej stronie.", "en": "Results will be available on the PractiScore platform and in the \"Results\" section of this website." }
+      },
+      {
+        "q": { "pl": "Czy mogę przyjść jako widz?", "en": "Can I come as a spectator?" },
+        "a": { "pl": "Tak, widzowie są mile widziani. Prosimy o przestrzeganie zasad bezpieczeństwa i stosowanie się do poleceń sędziów.", "en": "Yes, spectators are welcome. Please follow safety rules and comply with range officers' instructions." }
+      },
+      {
+        "q": { "pl": "Czy jest ograniczenie wiekowe?", "en": "Is there an age limit?" },
+        "a": { "pl": "Uczestnik musi posiadać ważne pozwolenie na broń, co w Polsce oznacza minimum 21 lat (broń do celów sportowych).", "en": "Participants must hold a valid firearms license, which in Poland means a minimum age of 21 (sports firearms)." }
+      }
+    ]
+  },
+  "results": {
+    "heading": { "pl": "Wyniki", "en": "Results" },
+    "placeholder": { "pl": "Wyniki zostaną opublikowane po zakończeniu zawodów 22 marca 2026.", "en": "Results will be published after the competition on March 22, 2026." },
+    "divisions_heading": { "pl": "Klasyfikacja w dywizjach", "en": "Division Classification" },
+    "divisions": ["Open", "Standard", "Production", "Classic", "Revolver"]
+  },
+  "gallery": {
+    "heading": { "pl": "Galeria", "en": "Gallery" },
+    "placeholder": { "pl": "Zdjęcia z zawodów zostaną dodane po wydarzeniu.", "en": "Event photos will be added after the competition." },
+    "coming_soon": { "pl": "Wkrótce", "en": "Coming Soon" }
+  },
+  "footer": {
+    "organizer": { "pl": "Organizator", "en": "Organizer" },
+    "club_name": { "pl": "Sekcja Dynamiczna Rzeszów", "en": "Sekcja Dynamiczna Rzeszów" },
+    "club_description": {
+      "pl": "Strzelectwo dynamiczne w formule IPSC\nTreningi indywidualne i grupowe",
+      "en": "Dynamic shooting in IPSC format\nIndividual and group training"
+    },
+    "email": "kontakt@sekcjadynamiczna.pl",
+    "event_info": { "pl": "Informacje o zawodach", "en": "Event Information" },
+    "contact": { "pl": "Kontakt", "en": "Contact" },
+    "follow_us": { "pl": "Śledź nas", "en": "Follow Us" },
+    "copyright": { "pl": "© 2026 Sekcja Dynamiczna Rzeszów. Wszelkie prawa zastrzeżone.", "en": "© 2026 Sekcja Dynamiczna Rzeszów. All rights reserved." }
+  }
+}

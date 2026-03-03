@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indoor Rzeszów 2026 — IPSC Level 1 | Puchar Prezydenta Rzeszowa</title>
+  <meta name="description" content="Zawody strzeleckie IPSC Level 1 Indoor — Puchar Prezydenta Rzeszowa i Starostwa Rzeszowskiego. 22 marca 2026, Strzelnica Dycha, Rzeszów.">
+  <meta property="og:title" content="Indoor Rzeszów 2026 — IPSC Level 1">
+  <meta property="og:description" content="Zawody strzeleckie IPSC Level 1 Indoor. 22 marca 2026, Rzeszów.">
+  <meta property="og:type" content="website">
+  <!-- TODO: Replace with absolute URL once deployment domain is known -->
+  <meta property="og:image" content="./assets/images/hero-bg.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/tailwind.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+
+  <script defer src="./assets/js/app.js"></script>
+  <script defer src="./assets/js/countdown.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.14.8/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>
+<body class="bg-dark text-white font-body" x-data x-init="$store.lang.init(); $store.nav.init()">
+
+  <a href="#about"
+     class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-primary focus:text-dark focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">
+    Skip to content
+  </a>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="fixed top-0 w-full z-50 transition-all duration-300"
+       :class="$store.nav.scrolled ? 'bg-dark/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 shrink-0">
+          <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+            <span class="font-heading text-dark text-lg font-bold">SD</span>
+          </div>
+          <span class="font-heading text-xl text-white hidden sm:block">IPSC INDOOR</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden lg:flex items-center gap-6">
+          <a href="#about" class="text-sm text-text-secondary hover:text-primary transition-colors" x-text="$store.lang.t('nav.about')"></a>
+          <a href="#registration" class="text-sm text-text-secondary hover:text-primary transition-colors" x-text="$store.lang.t('nav.registration')"></a>
+          <a href="#stages" class="text-sm text-text-secondary hover:text-primary transition-colors" x-text="$store.lang.t('nav.stages')"></a>
+          <a href="#location" class="text-sm text-text-secondary hover:text-primary transition-colors" x-text="$store.lang.t('nav.location')"></a>
+          <a href="#faq" class="text-sm text-text-secondary hover:text-primary transition-colors" x-text="$store.lang.t('nav.faq')"></a>
+          <a href="#results" class="text-sm text-text-secondary hover:text-primary transition-colors" x-text="$store.lang.t('nav.results')"></a>
+          <a href="#gallery" class="text-sm text-text-secondary hover:text-primary transition-colors" x-text="$store.lang.t('nav.gallery')"></a>
+        </div>
+
+        <!-- Right side: lang toggle + CTA -->
+        <div class="flex items-center gap-4">
+          <!-- PL/EN toggle -->
+          <div class="flex items-center gap-1 text-sm">
+            <button @click="$store.lang.current !== 'pl' && $store.lang.toggle()"
+                    :class="$store.lang.isPL ? 'text-primary font-bold' : 'text-text-secondary hover:text-white'"
+                    class="transition-colors px-1">PL</button>
+            <span class="text-text-secondary">/</span>
+            <button @click="$store.lang.current !== 'en' && $store.lang.toggle()"
+                    :class="$store.lang.isEN ? 'text-primary font-bold' : 'text-text-secondary hover:text-white'"
+                    class="transition-colors px-1">EN</button>
+          </div>
+
+          <!-- CTA (desktop) -->
+          <a href="#" class="hidden md:inline-block bg-primary text-dark font-bold text-sm px-5 py-2.5 rounded-lg hover:bg-yellow-400 transition-colors cta-glow"
+             x-text="$store.lang.t('nav.register_cta')"></a>
+
+          <!-- Hamburger (mobile) -->
+          <button @click="$store.nav.mobileOpen = !$store.nav.mobileOpen"
+                  class="lg:hidden text-white p-2"
+                  aria-label="Menu"
+                  :aria-expanded="$store.nav.mobileOpen.toString()">
+            <svg x-show="!$store.nav.mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg x-show="$store.nav.mobileOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div x-show="$store.nav.mobileOpen" x-cloak x-collapse class="lg:hidden pb-4 border-t border-dark-card">
+        <div class="flex flex-col gap-3 pt-4">
+          <a href="#about" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.about')"></a>
+          <a href="#registration" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.registration')"></a>
+          <a href="#stages" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.stages')"></a>
+          <a href="#location" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.location')"></a>
+          <a href="#faq" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.faq')"></a>
+          <a href="#results" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.results')"></a>
+          <a href="#gallery" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.gallery')"></a>
+          <a href="#" class="bg-primary text-dark font-bold text-center px-5 py-2.5 rounded-lg mt-2"
+             x-text="$store.lang.t('nav.register_cta')"></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ========== SECTION 1: HERO ========== -->
+  <section id="hero" class="hero-bg min-h-screen flex items-center justify-center relative">
+    <div class="text-center px-4 max-w-4xl mx-auto relative z-10">
+
+      <!-- Badge -->
+      <div class="inline-block mb-6">
+        <span class="text-primary text-sm md:text-base font-semibold tracking-[0.3em] uppercase border border-primary/30 px-4 py-2 rounded-full"
+              x-text="$store.lang.t('hero.badge')" x-cloak></span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white leading-none mb-4"
+          x-text="$store.lang.t('hero.title')" x-cloak></h1>
+
+      <!-- Subtitle -->
+      <p class="font-heading text-xl sm:text-2xl md:text-3xl text-text-secondary mb-6"
+         x-text="$store.lang.t('hero.subtitle')" x-cloak></p>
+
+      <!-- Date & Venue -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-primary font-medium mb-10">
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span x-text="$store.lang.t('hero.date')" x-cloak></span>
+        </span>
+        <span class="hidden sm:block text-text-secondary">|</span>
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span x-text="$store.lang.t('hero.venue')" x-cloak></span>
+        </span>
+      </div>
+
+      <!-- Countdown -->
+      <div x-data="countdown" class="mb-12">
+        <div x-show="!expired" class="flex gap-4 sm:gap-6 md:gap-8 justify-center">
+          <div class="text-center">
+            <span x-text="pad(days)" class="font-countdown text-4xl sm:text-5xl md:text-6xl text-primary countdown-digit block"></span>
+            <span x-text="$store.lang.t('hero.countdown.days')" class="text-text-secondary text-xs sm:text-sm uppercase tracking-wider mt-1 block" x-cloak></span>
+          </div>
+          <span class="font-countdown text-4xl sm:text-5xl md:text-6xl text-primary/50 self-start">:</span>
+          <div class="text-center">
+            <span x-text="pad(hours)" class="font-countdown text-4xl sm:text-5xl md:text-6xl text-primary countdown-digit block"></span>
+            <span x-text="$store.lang.t('hero.countdown.hours')" class="text-text-secondary text-xs sm:text-sm uppercase tracking-wider mt-1 block" x-cloak></span>
+          </div>
+          <span class="font-countdown text-4xl sm:text-5xl md:text-6xl text-primary/50 self-start">:</span>
+          <div class="text-center">
+            <span x-text="pad(minutes)" class="font-countdown text-4xl sm:text-5xl md:text-6xl text-primary countdown-digit block"></span>
+            <span x-text="$store.lang.t('hero.countdown.minutes')" class="text-text-secondary text-xs sm:text-sm uppercase tracking-wider mt-1 block" x-cloak></span>
+          </div>
+          <span class="font-countdown text-4xl sm:text-5xl md:text-6xl text-primary/50 self-start">:</span>
+          <div class="text-center">
+            <span x-text="pad(seconds)" class="font-countdown text-4xl sm:text-5xl md:text-6xl text-primary countdown-digit block"></span>
+            <span x-text="$store.lang.t('hero.countdown.seconds')" class="text-text-secondary text-xs sm:text-sm uppercase tracking-wider mt-1 block" x-cloak></span>
+          </div>
+        </div>
+        <div x-show="expired && !completed" x-cloak class="text-2xl md:text-3xl font-heading text-primary">
+          <span x-text="$store.lang.t('hero.expired')"></span>
+        </div>
+        <div x-show="completed" x-cloak class="text-2xl md:text-3xl font-heading text-primary">
+          <span x-text="$store.lang.t('hero.completed')"></span>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#" class="bg-primary text-dark font-bold text-lg px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow inline-flex items-center gap-2"
+           x-text="$store.lang.t('hero.cta_register')" x-cloak></a>
+        <a href="#about" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:border-primary hover:text-primary transition-all inline-flex items-center gap-2">
+          <span x-text="$store.lang.t('hero.cta_more')" x-cloak></span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+
+  <!-- ========== SECTION 2: ABOUT ========== -->
+  <section id="about" class="py-16 md:py-24 bg-dark-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="font-heading text-4xl md:text-5xl text-white section-heading-center"
+            x-text="$store.lang.t('about.heading')" x-cloak></h2>
+        <p class="text-text-secondary mt-6 max-w-3xl mx-auto text-lg leading-relaxed"
+           x-text="$store.lang.t('about.description')" x-cloak></p>
+      </div>
+
+      <!-- 3 Cards -->
+      <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-16">
+        <!-- Card 1: Dla kogo? -->
+        <div class="bg-dark-card rounded-xl p-8 hover:border-primary/30 border border-transparent transition-colors">
+          <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-2xl text-white mb-3" x-text="$store.lang.t('about.card1_title')" x-cloak></h3>
+          <p class="text-text-secondary leading-relaxed" x-text="$store.lang.t('about.card1_text')" x-cloak></p>
+        </div>
+
+        <!-- Card 2: Jak się zapisać? -->
+        <div class="bg-dark-card rounded-xl p-8 hover:border-primary/30 border border-transparent transition-colors">
+          <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-heading text-2xl text-white mb-3" x-text="$store.lang.t('about.card2_title')" x-cloak></h3>
+          <p class="text-text-secondary leading-relaxed" x-text="$store.lang.t('about.card2_text')" x-cloak></p>
+        </div>
+
+        <!-- Card 3: Co zabrać? -->
+        <div class="bg-dark-card rounded-xl p-8 hover:border-primary/30 border border-transparent transition-colors">
+          <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+          </div>
+          <h3 class="font-heading text-2xl text-white mb-3" x-text="$store.lang.t('about.card3_title')" x-cloak></h3>
+          <p class="text-text-secondary leading-relaxed" x-text="$store.lang.t('about.card3_text')" x-cloak></p>
+        </div>
+      </div>
+
+      <!-- Patronage -->
+      <div class="text-center">
+        <p class="text-text-secondary text-sm uppercase tracking-wider mb-6" x-text="$store.lang.t('about.patron_heading')" x-cloak></p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-lg bg-dark-card flex items-center justify-center text-text-secondary text-xs">HERB</div>
+            <span class="text-text-secondary" x-text="$store.lang.t('about.patron_city')" x-cloak></span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-lg bg-dark-card flex items-center justify-center text-text-secondary text-xs">HERB</div>
+            <span class="text-text-secondary" x-text="$store.lang.t('about.patron_county')" x-cloak></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SECTION 3: REGISTRATION ========== -->
+  <section id="registration" class="py-16 md:py-24 bg-section-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-4xl md:text-5xl text-white section-heading-center"
+            x-text="$store.lang.t('registration.heading')" x-cloak></h2>
+      </div>
+
+      <!-- Info cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-dark-card rounded-xl p-6 border-l-4 border-primary">
+          <p class="text-text-secondary text-sm uppercase tracking-wider mb-1" x-text="$store.lang.t('registration.fee_label')" x-cloak></p>
+          <p class="font-heading text-3xl text-primary" x-text="$store.lang.t('registration.fee_value')" x-cloak></p>
+        </div>
+        <div class="bg-dark-card rounded-xl p-6 border-l-4 border-primary">
+          <p class="text-text-secondary text-sm uppercase tracking-wider mb-1" x-text="$store.lang.t('registration.deadline_label')" x-cloak></p>
+          <p class="font-heading text-3xl text-white" x-text="$store.lang.t('registration.deadline_value')" x-cloak></p>
+          <p class="text-text-secondary text-sm mt-1" x-text="$store.lang.t('registration.deadline_note')" x-cloak></p>
+        </div>
+        <div class="bg-dark-card rounded-xl p-6 border-l-4 border-primary">
+          <p class="text-text-secondary text-sm uppercase tracking-wider mb-1" x-text="$store.lang.t('registration.limit_label')" x-cloak></p>
+          <p class="font-heading text-3xl text-white" x-text="$store.lang.t('registration.limit_value')" x-cloak></p>
+          <!-- Capacity bar -->
+          <div x-data class="mt-4">
+            <div class="w-full bg-dark rounded-full h-2.5">
+              <div class="bg-primary h-2.5 rounded-full transition-all duration-500"
+                   :style="'width: ' + Math.min(100, (($store.lang.data?.config?.capacity?.filled || 0) / ($store.lang.data?.config?.capacity?.total || 60)) * 100) + '%'"></div>
+            </div>
+            <p class="text-text-secondary text-xs mt-1">
+              <span x-text="$store.lang.data?.config?.capacity?.filled || 0"></span>/<span x-text="$store.lang.data?.config?.capacity?.total || 60"></span>
+              <span x-text="$store.lang.t('registration.capacity_label')"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Required documents -->
+      <div class="max-w-2xl mx-auto mb-12">
+        <h3 class="font-heading text-2xl text-white mb-4 text-center" x-text="$store.lang.t('registration.docs_heading')" x-cloak></h3>
+        <ul class="space-y-3">
+          <template x-for="(doc, i) in $store.lang.tArr('registration.docs')" :key="i">
+            <li class="flex items-start gap-3 text-text-secondary">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span x-text="doc"></span>
+            </li>
+          </template>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <a href="#" class="inline-block bg-primary text-dark font-bold text-lg px-10 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow"
+           x-text="$store.lang.t('registration.cta')" x-cloak></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SECTION 4: STAGES / SCHEDULE ========== -->
+  <section id="stages" class="py-16 md:py-24 bg-dark-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-4xl md:text-5xl text-white section-heading-center"
+            x-text="$store.lang.t('stages.heading')" x-cloak></h2>
+      </div>
+
+      <!-- Day schedule timeline -->
+      <div class="max-w-2xl mx-auto mb-16">
+        <div class="relative border-l-2 border-primary/30 ml-4 pl-8 space-y-8">
+          <template x-for="(item, i) in ($store.lang.data?.stages?.schedule || [])" :key="i">
+            <div class="relative">
+              <div class="absolute -left-[2.6rem] w-4 h-4 rounded-full bg-primary border-4 border-dark-alt"></div>
+              <p class="font-countdown text-primary text-sm mb-1" x-text="item.time"></p>
+              <p class="text-white font-medium" x-text="item[$store.lang.current]"></p>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Stages list -->
+      <div class="text-center mb-8">
+        <h3 class="font-heading text-3xl text-white" x-text="$store.lang.t('stages.stages_heading')" x-cloak></h3>
+        <p class="text-text-secondary mt-2" x-text="$store.lang.t('stages.stages_note')" x-cloak></p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <template x-for="(stage, i) in ($store.lang.data?.stages?.stages_list || [])" :key="i">
+          <div class="bg-dark-card rounded-xl p-6 border border-transparent hover:border-primary/20 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="font-heading text-xl text-white" x-text="stage.name[$store.lang.current]"></h4>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full"
+                    :class="{
+                      'bg-green-500/20 text-green-400': stage.type === 'Short',
+                      'bg-yellow-500/20 text-yellow-400': stage.type === 'Medium',
+                      'bg-red-500/20 text-red-400': stage.type === 'Long'
+                    }"
+                    x-text="stage.type === 'Short' ? $store.lang.t('stages.type_short') : stage.type === 'Medium' ? $store.lang.t('stages.type_medium') : $store.lang.t('stages.type_long')"></span>
+            </div>
+            <p class="text-text-secondary text-sm leading-relaxed" x-text="stage.description[$store.lang.current]"></p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SECTION 5: LOCATION ========== -->
+  <section id="location" class="py-16 md:py-24 bg-section-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-4xl md:text-5xl text-white section-heading-center"
+            x-text="$store.lang.t('location.heading')" x-cloak></h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Info -->
+        <div class="space-y-8">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-heading text-xl text-white mb-1" x-text="$store.lang.t('location.address_label')" x-cloak></h3>
+              <p class="text-text-secondary" x-text="$store.lang.t('location.address')" x-cloak></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+            </div>
+            <div>
+              <h3 class="font-heading text-xl text-white mb-1" x-text="$store.lang.t('location.parking_label')" x-cloak></h3>
+              <p class="text-text-secondary" x-text="$store.lang.t('location.parking_text')" x-cloak></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <div>
+              <h3 class="font-heading text-xl text-white mb-1" x-text="$store.lang.t('location.transport_label')" x-cloak></h3>
+              <p class="text-text-secondary" x-text="$store.lang.t('location.transport_text')" x-cloak></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <div>
+              <h3 class="font-heading text-xl text-white mb-1" x-text="$store.lang.t('location.facilities_label')" x-cloak></h3>
+              <p class="text-text-secondary" x-text="$store.lang.t('location.facilities_text')" x-cloak></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="rounded-xl overflow-hidden h-80 lg:h-full min-h-[320px] bg-dark-card">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.5!2d21.999!3d50.041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDAyJzI4LjAiTiAyMcKwNTknNTYuNCJF!5e0!3m2!1spl!2spl!4v1"
+            class="w-full h-full border-0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SECTION 6: FAQ ========== -->
+  <section id="faq" class="py-16 md:py-24 bg-dark-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-4xl md:text-5xl text-white section-heading-center"
+            x-text="$store.lang.t('faq.heading')" x-cloak></h2>
+      </div>
+
+      <div x-data="{ active: null }" class="max-w-3xl mx-auto space-y-3">
+        <template x-for="(item, index) in ($store.lang.data?.faq?.items || [])" :key="index">
+          <div class="bg-dark-card rounded-xl overflow-hidden">
+            <button @click="active = active === index ? null : index"
+                    class="w-full flex justify-between items-center p-5 text-left text-white hover:text-primary transition-colors"
+                    :id="'faq-question-' + index"
+                    :aria-expanded="(active === index).toString()"
+                    :aria-controls="'faq-answer-' + index">
+              <span x-text="item.q[$store.lang.current]" class="font-medium text-lg pr-4"></span>
+              <svg :class="{ 'rotate-180': active === index }"
+                   class="w-5 h-5 text-primary shrink-0 transition-transform duration-300"
+                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div x-show="active === index" x-collapse class="px-5 pb-5"
+                 :id="'faq-answer-' + index"
+                 role="region"
+                 :aria-labelledby="'faq-question-' + index">
+              <p class="text-text-secondary leading-relaxed" x-text="item.a[$store.lang.current]"></p>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SECTION 7: RESULTS ========== -->
+  <section id="results" class="py-16 md:py-24 bg-section-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-4xl md:text-5xl text-white section-heading-center"
+            x-text="$store.lang.t('results.heading')" x-cloak></h2>
+      </div>
+
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="bg-dark-card rounded-xl p-12 border border-dark-card">
+          <svg class="w-16 h-16 text-primary/30 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+          <p class="text-text-secondary text-lg" x-text="$store.lang.t('results.placeholder')" x-cloak></p>
+
+          <div class="flex flex-wrap justify-center gap-3 mt-8">
+            <template x-for="div in ($store.lang.data?.results?.divisions || [])" :key="div">
+              <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/10 text-primary" x-text="div"></span>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SECTION 8: GALLERY ========== -->
+  <section id="gallery" class="py-16 md:py-24 bg-dark-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-4xl md:text-5xl text-white section-heading-center"
+            x-text="$store.lang.t('gallery.heading')" x-cloak></h2>
+      </div>
+
+      <!-- Placeholder gallery grid -->
+      <div x-data="{ lightbox: false, current: '' }">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <template x-for="i in 8" :key="i">
+            <div class="aspect-square bg-dark-card rounded-xl flex items-center justify-center border border-dark-card hover:border-primary/20 transition-colors cursor-pointer group">
+              <div class="text-center">
+                <svg class="w-10 h-10 text-text-secondary/30 mx-auto mb-2 group-hover:text-primary/30 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span class="text-text-secondary/30 text-xs" x-text="$store.lang.t('gallery.coming_soon')" x-cloak></span>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <p class="text-center text-text-secondary mt-8" x-text="$store.lang.t('gallery.placeholder')" x-cloak></p>
+
+        <!-- Lightbox overlay (for future use) -->
+        <div x-show="lightbox" x-cloak x-transition
+             @click="lightbox = false"
+             class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center cursor-pointer">
+          <img :src="current" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg">
+          <button class="absolute top-6 right-6 text-white/70 hover:text-white">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="py-12 bg-dark border-t border-dark-card">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <!-- Col 1: Organizer -->
+        <div>
+          <p class="text-text-secondary text-sm uppercase tracking-wider mb-3" x-text="$store.lang.t('footer.organizer')" x-cloak></p>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+              <span class="font-heading text-dark text-lg font-bold">SD</span>
+            </div>
+            <span class="font-heading text-xl text-white" x-text="$store.lang.t('footer.club_name')" x-cloak></span>
+          </div>
+          <p class="text-text-secondary text-sm whitespace-pre-line"
+             x-text="$store.lang.t('footer.club_description')" x-cloak></p>
+        </div>
+
+        <!-- Col 2: Event info -->
+        <div>
+          <p class="text-text-secondary text-sm uppercase tracking-wider mb-3" x-text="$store.lang.t('footer.event_info')" x-cloak></p>
+          <div class="space-y-2 text-sm text-text-secondary">
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span x-text="$store.lang.t('hero.date')" x-cloak></span>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span x-text="$store.lang.t('hero.venue')" x-cloak></span>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <a :href="'mailto:' + ($store.lang.data?.footer?.email || 'kontakt@sekcjadynamiczna.pl')"
+                 class="hover:text-primary transition-colors"
+                 x-text="$store.lang.data?.footer?.email || 'kontakt@sekcjadynamiczna.pl'"></a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 3: Social -->
+        <div>
+          <p class="text-text-secondary text-sm uppercase tracking-wider mb-3" x-text="$store.lang.t('footer.follow_us')" x-cloak></p>
+          <div class="flex gap-4">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/sekcjadynamicznarzeszow/" target="_blank" rel="noopener noreferrer"
+               class="w-10 h-10 bg-dark-card rounded-lg flex items-center justify-center text-text-secondary hover:text-primary hover:bg-primary/10 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/sekcjadynamicznarzeszow/" target="_blank" rel="noopener noreferrer"
+               class="w-10 h-10 bg-dark-card rounded-lg flex items-center justify-center text-text-secondary hover:text-primary hover:bg-primary/10 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-dark-card pt-6 text-center">
+        <p class="text-text-secondary text-sm" x-text="$store.lang.t('footer.copyright')" x-cloak></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
