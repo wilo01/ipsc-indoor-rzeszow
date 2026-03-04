@@ -6,8 +6,8 @@
     },
     "results_published": false,
     "practiscore": {
-      "registration_url": "https://practiscore.com/search/matches",
-      "results_url": "https://practiscore.com/search/matches"
+      "registration_url": "https://practiscore.com/search/matches?refinementList%5Btype%5D%5B0%5D=IPSC%3A%20Handgun&query=rzesz%C3%B3w",
+      "results_url": "https://practiscore.com/search/matches?refinementList%5Btype%5D%5B0%5D=IPSC%3A%20Handgun&query=rzesz%C3%B3w"
     }
   },
   "nav": {
@@ -138,7 +138,7 @@
   "location": {
     "heading": { "pl": "Dojazd i miejsce", "en": "Location & Directions" },
     "address_label": { "pl": "Adres", "en": "Address" },
-    "address": { "pl": "Strzelnica \"Dycha\", Rzeszów", "en": "Shooting Range \"Dycha\", Rzeszów, Poland" },
+    "address": { "pl": "Strzelnica \"Dycha\"\nul. Biznesowa 15, 35-213 Rzeszów", "en": "Shooting Range \"Dycha\"\nul. Biznesowa 15, 35-213 Rzeszów, Poland" },
     "parking_label": { "pl": "Parking", "en": "Parking" },
     "parking_text": { "pl": "Bezpłatny parking dostępny na terenie obiektu.", "en": "Free parking available on site." },
     "transport_label": { "pl": "Dojazd", "en": "Getting there" },
