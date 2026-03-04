@@ -4,10 +4,14 @@
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify",
-    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch",
+    "build": "pnpm run build:css",
+    "dev:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch",
+    "dev:serve": "serve .",
+    "dev": "concurrently --kill-others \"pnpm run dev:css\" \"pnpm run dev:serve\"",
     "serve": "serve ."
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "serve": "^14.2.4",
     "tailwindcss": "^3.4.17"
   }

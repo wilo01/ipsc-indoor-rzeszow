@@ -5,3 +5,11 @@ dist/
 *.log
 .vercel
 assets/css/tailwind.css
+
+# Raw source images — do not commit
+assets/images/social/
+assets/images/*.pdf
+assets/images/*.PDF
+assets/images/*.docx
+assets/images/*.DOCX
+assets/images/*_n.jpg

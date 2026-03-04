@@ -193,7 +193,17 @@
   "gallery": {
     "heading": { "pl": "Galeria", "en": "Gallery" },
     "placeholder": { "pl": "Zdjęcia z zawodów zostaną dodane po wydarzeniu.", "en": "Event photos will be added after the competition." },
-    "coming_soon": { "pl": "Wkrótce", "en": "Coming Soon" }
+    "coming_soon": { "pl": "Wkrótce", "en": "Coming Soon" },
+    "photos": [
+      { "thumb": "./assets/images/gallery/gallery-1.jpg", "full": "./assets/images/gallery/gallery-1-full.jpg", "alt": { "pl": "Strzelanie dynamiczne IPSC", "en": "IPSC dynamic shooting action" } },
+      { "thumb": "./assets/images/gallery/gallery-2.jpg", "full": "./assets/images/gallery/gallery-2-full.jpg", "alt": { "pl": "Strzelec celujący z pistoletu", "en": "IPSC shooter aiming" } },
+      { "thumb": "./assets/images/gallery/gallery-3.jpg", "full": "./assets/images/gallery/gallery-3-full.jpg", "alt": { "pl": "Strzelec na strzelnicy", "en": "Shooter at the range" } },
+      { "thumb": "./assets/images/gallery/gallery-4.jpg", "full": "./assets/images/gallery/gallery-4-full.jpg", "alt": { "pl": "Zawodnik strzelania dynamicznego IPSC", "en": "IPSC dynamic shooting competitor" } },
+      { "thumb": "./assets/images/gallery/gallery-5.jpg", "full": "./assets/images/gallery/gallery-5-full.jpg", "alt": { "pl": "Nagrody i medale z zawodów", "en": "Competition prizes and medals" } },
+      { "thumb": "./assets/images/gallery/gallery-6.jpg", "full": "./assets/images/gallery/gallery-6-full.jpg", "alt": { "pl": "Zwycięzcy z medalami i banerem IPSC", "en": "Winners with medals and IPSC banner" } },
+      { "thumb": "./assets/images/gallery/gallery-7.jpg", "full": "./assets/images/gallery/gallery-7-full.jpg", "alt": { "pl": "Grupa na strzelnicy", "en": "Group at the shooting range" } },
+      { "thumb": "./assets/images/gallery/gallery-8.jpg", "full": "./assets/images/gallery/gallery-8-full.jpg", "alt": { "pl": "Przyjaciele na zawodach strzeleckich", "en": "Friends at shooting competition" } }
+    ]
   },
   "footer": {
     "organizer": { "pl": "Organizator", "en": "Organizer" },

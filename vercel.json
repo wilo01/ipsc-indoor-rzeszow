@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build:css",
-  "installCommand": "npm install",
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install",
   "outputDirectory": ".",
   "cleanUrls": true,
   "headers": [
