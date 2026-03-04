@@ -4,6 +4,7 @@
       "filled": 42,
       "total": 60
     },
+    "results_published": false,
     "practiscore": {
       "registration_url": "https://practiscore.com/search/matches",
       "results_url": "https://practiscore.com/search/matches"

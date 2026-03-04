@@ -72,9 +72,11 @@
           </div>
 
           <!-- CTA (desktop) -->
-          <a :href="$store.lang.data?.config?.practiscore?.registration_url || '#'" target="_blank" rel="noopener noreferrer"
-             class="hidden md:inline-block bg-primary text-dark font-bold text-sm px-5 py-2.5 rounded-lg hover:bg-yellow-400 transition-colors cta-glow"
-             x-text="$store.lang.t('nav.register_cta')"></a>
+          <a :href="$store.lang.registrationUrl" target="_blank" rel="noopener noreferrer"
+             class="hidden md:inline-flex items-center gap-1.5 bg-primary text-dark font-bold text-sm px-5 py-2.5 rounded-lg hover:bg-yellow-400 transition-colors cta-glow">
+            <span x-text="$store.lang.t('nav.register_cta')" x-cloak></span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </a>
 
           <!-- Hamburger (mobile) -->
           <button @click="$store.nav.mobileOpen = !$store.nav.mobileOpen"
@@ -101,9 +103,11 @@
           <a href="#faq" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.faq')"></a>
           <a href="#results" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.results')"></a>
           <a href="#gallery" @click="$store.nav.mobileOpen = false" class="text-text-secondary hover:text-primary transition-colors py-1" x-text="$store.lang.t('nav.gallery')"></a>
-          <a :href="$store.lang.data?.config?.practiscore?.registration_url || '#'" target="_blank" rel="noopener noreferrer"
-             class="bg-primary text-dark font-bold text-center px-5 py-2.5 rounded-lg mt-2"
-             x-text="$store.lang.t('nav.register_cta')"></a>
+          <a :href="$store.lang.registrationUrl" target="_blank" rel="noopener noreferrer"
+             class="flex items-center justify-center gap-1.5 bg-primary text-dark font-bold px-5 py-2.5 rounded-lg mt-2">
+            <span x-text="$store.lang.t('nav.register_cta')" x-cloak></span>
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -174,9 +178,11 @@
 
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a :href="$store.lang.data?.config?.practiscore?.registration_url || '#'" target="_blank" rel="noopener noreferrer"
-           class="bg-primary text-dark font-bold text-lg px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow inline-flex items-center gap-2"
-           x-text="$store.lang.t('hero.cta_register')" x-cloak></a>
+        <a :href="$store.lang.registrationUrl" target="_blank" rel="noopener noreferrer"
+           class="bg-primary text-dark font-bold text-lg px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow inline-flex items-center gap-2">
+          <span x-text="$store.lang.t('hero.cta_register')" x-cloak></span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
         <a href="#about" class="border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:border-primary hover:text-primary transition-all inline-flex items-center gap-2">
           <span x-text="$store.lang.t('hero.cta_more')" x-cloak></span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
@@ -303,9 +309,11 @@
 
       <!-- CTA -->
       <div class="text-center">
-        <a :href="$store.lang.data?.config?.practiscore?.registration_url || '#'" target="_blank" rel="noopener noreferrer"
-           class="inline-block bg-primary text-dark font-bold text-lg px-10 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow"
-           x-text="$store.lang.t('registration.cta')" x-cloak></a>
+        <a :href="$store.lang.registrationUrl" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-primary text-dark font-bold text-lg px-10 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow">
+          <span x-text="$store.lang.t('registration.cta')" x-cloak></span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -487,10 +495,12 @@
             </template>
           </div>
 
-          <div class="mt-8">
-            <a :href="$store.lang.data?.config?.practiscore?.results_url || '#'" target="_blank" rel="noopener noreferrer"
-               class="inline-block bg-primary text-dark font-bold text-lg px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow"
-               x-text="$store.lang.t('results.cta')" x-cloak></a>
+          <div class="mt-8" x-show="$store.lang.data?.config?.results_published" x-cloak>
+            <a :href="$store.lang.resultsUrl" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 bg-primary text-dark font-bold text-lg px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all cta-glow">
+              <span x-text="$store.lang.t('results.cta')" x-cloak></span>
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
           </div>
         </div>
       </div>

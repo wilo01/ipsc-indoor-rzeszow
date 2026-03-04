@@ -54,7 +54,14 @@ document.addEventListener('alpine:init', () => {
     },
 
     get isPL() { return this.current === 'pl'; },
-    get isEN() { return this.current === 'en'; }
+    get isEN() { return this.current === 'en'; },
+
+    get registrationUrl() {
+      return this.data?.config?.practiscore?.registration_url || '#';
+    },
+    get resultsUrl() {
+      return this.data?.config?.practiscore?.results_url || '#';
+    }
   });
 
   Alpine.store('nav', {

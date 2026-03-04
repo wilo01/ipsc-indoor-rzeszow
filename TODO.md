@@ -8,9 +8,9 @@
 - [ ] Update `og:image` to absolute URL once deployment domain is known (`index.html` line ~12)
 
 - [ ] Replace PractiScore placeholder URLs with actual match URLs once created (`assets/js/translations.json` → `config.practiscore`)
-- [ ] Hide results CTA until results are published — add `x-show` guard or `config.results_published` flag (`index.html` results section)
-- [ ] Extract repeated PractiScore URL expression into an Alpine store helper (e.g. `$store.lang.practiscoreUrl('registration')`)
-- [ ] Add external-link indicator (icon/arrow) to CTA buttons that open in a new tab
+- [x] Hide results CTA until results are published — add `x-show` guard or `config.results_published` flag (`index.html` results section)
+- [x] Extract repeated PractiScore URL expression into an Alpine store helper (e.g. `$store.lang.registrationUrl`)
+- [x] Add external-link indicator (icon/arrow) to CTA buttons that open in a new tab
 
 ## Ongoing
 
